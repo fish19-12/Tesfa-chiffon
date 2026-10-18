@@ -71,7 +71,7 @@ const Contact = () => {
 
       title: "Studio Location",
 
-      content: "22 Dria Mall, 1st Floor, Shop No. 101",
+      content: "22 bedrya Mall, 1st Floor, Shop No. 101",
 
       bg: "bg-[#FFE6EE]",
 
@@ -92,17 +92,11 @@ const Contact = () => {
   ];
 
   return (
-    <div
-      className="min-h-screen overflow-hidden bg-[#fff9fb] text-[#1A1A1A]"
-    >
+    <div className="min-h-screen overflow-hidden bg-[#fff9fb] text-[#1A1A1A]">
       {/* ================= HERO ================= */}
 
-      <section
-        className="relative px-5 pb-14 pt-20 sm:pb-16 sm:pt-24"
-      >
-        <div
-          className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-[#f8cbd9]/45 blur-3xl"
-        />
+      <section className="relative px-5 pb-14 pt-20 sm:pb-16 sm:pt-24">
+        <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-[#f8cbd9]/45 blur-3xl" />
 
         <Motion.div
           initial={{
@@ -118,27 +112,19 @@ const Contact = () => {
           }}
           className="relative mx-auto max-w-4xl text-center"
         >
-          <p
-            className="text-xs font-bold uppercase tracking-[0.3em] text-[#c52d62]"
-          >
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#c52d62]">
             {translate("Tesfa Chiffon")}
           </p>
 
-          <h1
-            className="mt-5 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
-          >
+          <h1 className="mt-5 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
             {translate("Contact Our")}
 
-            <span
-              className="mt-1 block font-serif font-medium italic text-[#c52d62]"
-            >
+            <span className="mt-1 block font-serif font-medium italic text-[#c52d62]">
               {translate("Fashion Studio")}
             </span>
           </h1>
 
-          <p
-            className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-[#6B7280] sm:text-base"
-          >
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-[#6B7280] sm:text-base">
             {translate(
               "Get in touch with Tesfa Chiffon about custom designs, collections, and appointments.",
             )}
@@ -147,9 +133,7 @@ const Contact = () => {
       </section>
       {/* ================= CONTACT CONTENT ================= */}
 
-      <section
-        className="mx-auto grid max-w-7xl gap-6 px-5 pb-20 sm:px-8 lg:grid-cols-[0.95fr_1.05fr]"
-      >
+      <section className="mx-auto grid max-w-7xl gap-6 px-5 pb-20 sm:px-8 lg:grid-cols-[0.95fr_1.05fr]">
         {/* INFORMATION CARD */}
 
         <Motion.div
@@ -169,27 +153,19 @@ const Contact = () => {
           }}
           className="rounded-[1.75rem] border border-[#f0e3e8] bg-white p-6 shadow-[0_24px_80px_-48px_rgba(80,30,50,0.4)] sm:p-9"
         >
-          <div
-            className="mb-7"
-          >
-            <h2
-              className="text-2xl font-bold tracking-tight sm:text-3xl"
-            >
+          <div className="mb-7">
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
               {translate("Get In Touch")}
             </h2>
 
-            <p
-              className="mt-2 text-sm leading-6 text-[#6B7280] sm:text-base"
-            >
+            <p className="mt-2 text-sm leading-6 text-[#6B7280] sm:text-base">
               {translate(
                 "We would love to help you create your perfect fashion design.",
               )}
             </p>
           </div>
 
-          <div
-            className="grid gap-3 sm:grid-cols-2"
-          >
+          <div className="grid gap-3 sm:grid-cols-2">
             {contactItems.map((item, index) => (
               <Motion.div
                 key={index}
@@ -216,15 +192,11 @@ ${item.color}
                 </div>
 
                 <div>
-                  <p
-                    className="text-xs font-semibold uppercase tracking-wide text-[#6B7280]"
-                  >
+                  <p className="text-xs font-semibold uppercase tracking-wide text-[#6B7280]">
                     {translate(item.title)}
                   </p>
 
-                  <p
-                    className="mt-1 text-sm font-semibold leading-5 sm:text-base"
-                  >
+                  <p className="mt-1 text-sm font-semibold leading-5 sm:text-base">
                     {typeof item.content === "string"
                       ? translate(item.content)
                       : item.content}
@@ -236,9 +208,7 @@ ${item.color}
 
           {/* ACTION BUTTONS */}
 
-          <div
-            className="mt-7 grid gap-3 sm:grid-cols-2"
-          >
+          <div className="mt-7 grid gap-3 sm:grid-cols-2">
             <a
               href="tel:0993629172"
               className="flex items-center justify-center gap-3 rounded-full bg-[#c52d62] py-3.5 font-semibold text-white transition hover:bg-[#a92353]"

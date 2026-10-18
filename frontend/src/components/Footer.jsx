@@ -1,13 +1,24 @@
-import { FaArrowRight, FaMapMarkerAlt, FaPhone, FaWhatsapp } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaMapMarkerAlt,
+  FaPhone,
+  FaWhatsapp,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer = () => (
   <footer className="border-t border-[#f1e4e9] bg-white text-[#1A1A1A]">
     <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 sm:px-8 md:grid-cols-[1.2fr_1fr] md:items-center md:py-12">
       <div>
-        <Link to="/" className="inline-flex items-baseline gap-2" aria-label="Tesfa Chiffon home">
+        <Link
+          to="/"
+          className="inline-flex items-baseline gap-2"
+          aria-label="Tesfa Chiffon home"
+        >
           <span className="text-2xl font-bold tracking-[0.16em]">TESFA</span>
-          <span className="text-sm font-semibold tracking-[0.24em] text-[#c52d62]">CHIFFON</span>
+          <span className="text-sm font-semibold tracking-[0.24em] text-[#c52d62]">
+            CHIFFON
+          </span>
         </Link>
         <p className="mt-3 max-w-md text-sm leading-6 text-[#6B7280]">
           Chiffon and custom fashion, thoughtfully made for you.
@@ -29,7 +40,9 @@ const Footer = () => (
             <FaPhone aria-hidden="true" />
           </span>
           <span>
-            <span className="block text-xs font-medium uppercase tracking-wide text-[#6B7280]">Call Tesfa</span>
+            <span className="block text-xs font-medium uppercase tracking-wide text-[#6B7280]">
+              Call Tesfa
+            </span>
             <span className="mt-1 block font-semibold">0993629172</span>
           </span>
         </a>
@@ -44,7 +57,9 @@ const Footer = () => (
             <FaWhatsapp aria-hidden="true" />
           </span>
           <span>
-            <span className="block text-xs font-medium uppercase tracking-wide text-[#6B7280]">WhatsApp</span>
+            <span className="block text-xs font-medium uppercase tracking-wide text-[#6B7280]">
+              WhatsApp
+            </span>
             <span className="mt-1 block font-semibold">Chat with us</span>
           </span>
         </a>
@@ -59,8 +74,12 @@ const Footer = () => (
             <FaMapMarkerAlt aria-hidden="true" />
           </span>
           <span>
-            <span className="block text-xs font-medium uppercase tracking-wide text-[#6B7280]">Visit our studio</span>
-            <span className="mt-1 block font-semibold">22 Dria Mall, 1st Floor, Shop No. 101</span>
+            <span className="block text-xs font-medium uppercase tracking-wide text-[#6B7280]">
+              Visit our studio
+            </span>
+            <span className="mt-1 block font-semibold">
+              22 bedrya Mall, 1st Floor, Shop No. 101
+            </span>
           </span>
         </a>
       </div>
