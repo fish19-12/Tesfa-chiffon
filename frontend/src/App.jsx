@@ -27,10 +27,7 @@ import OrderSuccess from "./pages/OrderSuccess";
 /* ================= GALLERY CATEGORY PAGES ================= */
 
 import ChiffonGallery from "./pages/gallery/ChiffonGallery";
-import BridalGallery from "./pages/gallery/BridalGallery";
-import TraditionalGallery from "./pages/gallery/TraditionalGallery";
 import ModernGallery from "./pages/gallery/ModernGallery";
-import TextileGallery from "./pages/gallery/TextileGallery";
 
 /* ================= SCROLL TO TOP ================= */
 
@@ -89,16 +86,7 @@ min-h-screen
 
             <Route path="/gallery/chiffon" element={<ChiffonGallery />} />
 
-            <Route path="/gallery/bridal" element={<BridalGallery />} />
-
-            <Route
-              path="/gallery/traditional"
-              element={<TraditionalGallery />}
-            />
-
             <Route path="/gallery/modern" element={<ModernGallery />} />
-
-            <Route path="/gallery/textile" element={<TextileGallery />} />
 
             {/* CART */}
 

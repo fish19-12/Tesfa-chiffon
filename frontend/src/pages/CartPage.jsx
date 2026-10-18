@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 import measurementImage from "../assets/measurment.jpg";
 
@@ -65,9 +65,9 @@ const CartPage = () => {
     telebirr: {
       name: "Telebirr",
 
-      number: "0911139312",
+      number: "0993629172",
 
-      accountName: "Zubeyida Zeynu",
+      accountName: "Tesfa Chiffon",
 
       prepayment: 3000,
     },
@@ -354,7 +354,7 @@ mx-auto
       >
         {/* HEADER */}
 
-        <motion.div
+        <Motion.div
           initial={{
             opacity: 0,
             y: 20,
@@ -408,7 +408,7 @@ text-gray-600
           >
             {translate("Add measurements and complete your order")}
           </p>
-        </motion.div>
+        </Motion.div>
 
         <div
           className="

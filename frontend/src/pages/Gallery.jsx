@@ -1,12 +1,9 @@
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 import {
   FaGem,
-  FaCrown,
-  FaTshirt,
   FaPalette,
-  FaLayerGroup,
   FaArrowRight,
   FaStar,
 } from "react-icons/fa";
@@ -19,10 +16,12 @@ import en from "../translations/en.json";
 import am from "../translations/am.json";
 
 import chiffonImg from "../assets/chiffon1.jpg";
-import bridalImg from "../assets/bridal1.jpg";
 import customImg from "../assets/custom1.jpg";
-import traditionalImg from "../assets/traditional1.jpg";
-import textileImg from "../assets/textile1.jpg";
+
+const translations = {
+  EN: en,
+  AM: am,
+};
 
 const collections = [
   {
@@ -41,42 +40,11 @@ const collections = [
   },
 
   {
-    title: "Bridal Collection",
+    title: "Custom Fashion Design",
 
-    category: "Bridal",
+    category: "Custom",
 
-    description:
-      "Dream wedding designs created with luxury details and unforgettable elegance.",
-
-    image: bridalImg,
-
-    icon: <FaCrown />,
-
-    link: "/gallery/bridal",
-  },
-
-  {
-    title: "Traditional Ethiopian Wear",
-
-    category: "Traditional",
-
-    description:
-      "Beautiful Ethiopian cultural fashion redesigned with modern luxury craftsmanship.",
-
-    image: traditionalImg,
-
-    icon: <FaTshirt />,
-
-    link: "/gallery/traditional",
-  },
-
-  {
-    title: "Modern Fashion",
-
-    category: "Modern",
-
-    description:
-      "Contemporary fashion styles created for confident and elegant women.",
+    description: "Create a unique look designed around your style and vision.",
 
     image: customImg,
 
@@ -85,30 +53,10 @@ const collections = [
     link: "/gallery/modern",
   },
 
-  {
-    title: "Premium Textile",
-
-    category: "Textile",
-
-    description:
-      "High quality fabrics and luxury materials selected for fashion lovers.",
-
-    image: textileImg,
-
-    icon: <FaLayerGroup />,
-
-    link: "/gallery/textile",
-  },
 ];
 
 const Gallery = () => {
   const { language } = useLanguage();
-
-  const translations = {
-    EN: en,
-
-    AM: am,
-  };
 
   const translate = useCallback(
     (text) => {
@@ -142,7 +90,7 @@ const Gallery = () => {
           mx-auto
           "
         >
-          <motion.div
+          <Motion.div
             initial={{
               opacity: 0,
               y: 30,
@@ -222,7 +170,7 @@ const Gallery = () => {
                 "Explore our exclusive collections. Choose your favorite style and discover handcrafted fashion created with elegance and premium details.",
               )}
             </p>
-          </motion.div>
+          </Motion.div>
         </div>
       </section>
 
@@ -244,15 +192,14 @@ const Gallery = () => {
           <div
             className="
             grid
-            grid-cols-2
-            md:grid-cols-3
-            xl:grid-cols-5
+            grid-cols-1
+            sm:grid-cols-2
             gap-4
             sm:gap-6
             "
           >
             {collections.map((item, index) => (
-              <motion.div
+              <Motion.div
                 key={item.title}
                 initial={{
                   opacity: 0,
@@ -407,7 +354,7 @@ const Gallery = () => {
                     <FaArrowRight />
                   </Link>
                 </div>
-              </motion.div>
+              </Motion.div>
             ))}
           </div>
         </div>
@@ -422,7 +369,7 @@ const Gallery = () => {
         px-5
         "
       >
-        <motion.div
+        <Motion.div
           initial={{
             opacity: 0,
             y: 30,
@@ -482,7 +429,7 @@ const Gallery = () => {
           >
             {translate("Contact Designer")}
           </Link>
-        </motion.div>
+        </Motion.div>
       </section>
     </div>
   );

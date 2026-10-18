@@ -18,38 +18,38 @@ import "react-toastify/dist/ReactToastify.css";
 
 const servicesList = [
   {
-    name: "VIP Service",
-    desc: "Premium Grooming Experience",
+    name: "Custom Design Consultation",
+    desc: "Plan a dress made for you",
     icon: <FaCrown />,
-    color: "from-yellow-400 to-amber-600",
+    color: "from-pink-500 to-rose-600",
   },
 
   {
-    name: "VVIP Service",
-    desc: "Luxury Elite Service",
+    name: "Bridal Fitting",
+    desc: "Prepare your wedding look",
     icon: <FaGem />,
-    color: "from-purple-500 to-pink-500",
+    color: "from-amber-400 to-orange-500",
   },
 
   {
-    name: "Nhatty Reborn",
-    desc: "Complete Transformation",
+    name: "Chiffon Styling",
+    desc: "Explore elegant chiffon styles",
     icon: <FaMagic />,
-    color: "from-red-500 to-orange-500",
+    color: "from-rose-400 to-pink-600",
   },
 
   {
-    name: "Outdoor",
-    desc: "Service At Your Home",
+    name: "At-home Fitting",
+    desc: "Arrange a fitting at home",
     icon: <FaCar />,
-    color: "from-green-500 to-emerald-600",
+    color: "from-emerald-400 to-teal-600",
   },
 
   {
-    name: "City To City",
-    desc: "Travel Grooming Service",
+    name: "Remote Consultation",
+    desc: "Plan your design from anywhere",
     icon: <FaCity />,
-    color: "from-blue-500 to-cyan-500",
+    color: "from-sky-400 to-indigo-600",
   },
 ];
 
@@ -321,7 +321,7 @@ const Booking = () => {
     }
 
     // OUTDOOR VALIDATION
-    if (selectedService === "Outdoor" && !outdoorAddress.trim()) {
+    if (selectedService === "At-home Fitting" && !outdoorAddress.trim()) {
       toast.error("⚠️ Please enter home address for outdoor service");
 
       return false;
@@ -329,7 +329,7 @@ const Booking = () => {
 
     // CITY TO CITY VALIDATION
     if (
-      selectedService === "City To City" &&
+      selectedService === "Remote Consultation" &&
       (!cityLocation.trim() || !cityNeedDate)
     ) {
       toast.error("⚠️ Please complete city-to-city information");
@@ -464,7 +464,7 @@ const Booking = () => {
                 </span>{" "}
                 for booking with{" "}
                 <span className="text-white font-semibold">
-                  Nhatty The Barber
+                  Tesfa Chiffon
                 </span>
                 .
               </p>
@@ -548,21 +548,20 @@ const Booking = () => {
         {/* HEADER */}
         <div className="text-center mb-8 sm:mb-12">
           <div className="inline-block px-4 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-xs mb-4">
-            Luxury Booking System
+            Tesfa Chiffon • Personal Appointments
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-black bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-            Book Appointment
+            Book a Consultation
           </h1>
 
           <p className="text-gray-400 mt-3 text-sm sm:text-base max-w-2xl mx-auto">
-            Premium barber experience with luxury grooming services designed for
-            elite clients.
+            Book a design consultation, fitting, or styling appointment with our team.
           </p>
         </div>
 
         {/* LAYOUT */}
-        <div className="flex flex-col xl:grid xl:grid-cols-[360px_1fr] gap-5">
+        <div className="grid gap-5 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
           {/* FORM */}
           <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-4 sm:p-7">
             {/* CUSTOMER INFO */}
@@ -592,7 +591,7 @@ const Booking = () => {
             <div className="mb-7">
               <h3 className="section-title">Choose One Service</h3>
 
-              <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
                 {servicesList.map((service, i) => (
                   <div
                     key={i}
@@ -618,7 +617,7 @@ const Booking = () => {
             </div>
 
             {/* OUTDOOR */}
-            {selectedService === "Outdoor" && (
+            {selectedService === "At-home Fitting" && (
               <div className="mb-7 bg-gradient-to-br from-green-500/10 to-emerald-500/5 border border-green-500/20 rounded-3xl p-5 relative overflow-hidden">
                 {/* GLOW */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 blur-3xl rounded-full"></div>
@@ -631,11 +630,11 @@ const Booking = () => {
 
                     <div>
                       <h3 className="text-green-400 font-bold text-lg">
-                        Home To Home Service
+                        At-home Fitting
                       </h3>
 
                       <p className="text-gray-400 text-sm">
-                        Premium barber service at your location
+                        Arrange a fitting at your location
                       </p>
                     </div>
                   </div>
@@ -668,7 +667,7 @@ const Booking = () => {
             )}
 
             {/* CITY */}
-            {selectedService === "City To City" && (
+            {selectedService === "Remote Consultation" && (
               <div className="mb-7 bg-gradient-to-br from-blue-500/10 to-cyan-500/5 border border-blue-500/20 rounded-3xl p-5 relative overflow-hidden">
                 {/* GLOW */}
                 <div className="absolute bottom-0 left-0 w-32 h-32 bg-blue-500/10 blur-3xl rounded-full"></div>
@@ -681,11 +680,11 @@ const Booking = () => {
 
                     <div>
                       <h3 className="text-blue-400 font-bold text-lg">
-                        City To City Service
+                        Remote Consultation
                       </h3>
 
                       <p className="text-gray-400 text-sm">
-                        Luxury travel grooming experience
+                        Plan your design from your preferred location
                       </p>
                     </div>
                   </div>
@@ -860,7 +859,7 @@ const Booking = () => {
               )}
             </div>
             {/* PAYMENT */}
-            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-4 sm:p-6 h-fit sticky top-5">
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-4 sm:p-6 h-fit lg:sticky lg:top-5">
               <div className="flex items-center justify-between mb-5">
                 <h2 className="text-xl font-bold text-yellow-400">Payment</h2>
 
@@ -882,15 +881,15 @@ const Booking = () => {
               <div className="flex items-center justify-between mb-5">
                 <span className="text-gray-400 text-sm">Account Name</span>
 
-                <span className="font-semibold">Nhattan Sisay</span>
+                <span className="font-semibold">Tesfa Chiffon</span>
               </div>
 
               {/* ACCOUNTS */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {[
                   {
                     label: "Telebirr",
-                    number: "0975700510",
+                    number: "0993629172",
                   },
                   {
                     label: "CBE",

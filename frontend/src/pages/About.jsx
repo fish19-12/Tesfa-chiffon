@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { useCallback } from "react";
 
 import ceoPhoto from "../assets/ceo.jpg";
@@ -19,14 +19,13 @@ import { useLanguage } from "../context/LanguageContext.jsx";
 import en from "../translations/en.json";
 import am from "../translations/am.json";
 
+const translations = {
+  EN: en,
+  AM: am,
+};
+
 const About = () => {
   const { language } = useLanguage();
-
-  const translations = {
-    EN: en,
-
-    AM: am,
-  };
 
   const translate = useCallback(
     (text) => {
@@ -111,20 +110,21 @@ const About = () => {
   ];
 
   return (
-    <main className="bg-white text-[#181818] overflow-hidden">
+    <main className="overflow-hidden bg-white text-[#181818]">
       {/* INTRO SECTION */}
 
       <section
-        className="
-max-w-7xl
-mx-auto
-px-5
-sm:px-8
-pt-24
-pb-20
-"
+        className="relative isolate overflow-hidden bg-gradient-to-br from-[#fff7f9] via-white to-[#fff1e8] px-5 py-20 sm:px-8 sm:py-28"
       >
-        <motion.div
+        <div
+          aria-hidden="true"
+          className="absolute -right-24 -top-28 h-72 w-72 rounded-full bg-[#f9c9d9]/40 blur-3xl"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute -bottom-36 left-1/3 h-72 w-72 rounded-full bg-[#f5d9b8]/40 blur-3xl"
+        />
+        <Motion.div
           initial={{
             opacity: 0,
             y: 40,
@@ -136,50 +136,28 @@ pb-20
           transition={{
             duration: 0.8,
           }}
-          className="max-w-4xl"
+          className="relative mx-auto max-w-7xl rounded-[2rem] border border-white/80 bg-white/75 p-7 shadow-[0_24px_80px_-40px_rgba(80,30,50,0.28)] backdrop-blur sm:p-12 md:p-16"
         >
           <p
-            className="
-uppercase
-tracking-[0.4em]
-text-sm
-font-semibold
-text-[#E91E63]
-mb-6
-"
+            className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#f2c7d5] bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-[#c52d62] sm:text-sm"
           >
             {translate("About Tesfa Chiffon")}
           </p>
 
           <h1
-            className="
-text-4xl
-sm:text-5xl
-md:text-6xl
-font-bold
-leading-tight
-"
+            className="max-w-4xl text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl md:text-7xl"
           >
             {translate("Creating Elegant Fashion")}
 
             <span
-              className="
-block
-text-[#E91E63]
-"
+              className="mt-2 block font-serif font-medium italic text-[#c52d62]"
             >
               {translate("Inspired By Culture & Beauty")}
             </span>
           </h1>
 
           <p
-            className="
-mt-8
-text-lg
-md:text-xl
-leading-relaxed
-text-gray-600
-"
+            className="mt-8 max-w-3xl text-base leading-8 text-gray-600 sm:text-lg sm:leading-9"
           >
             {translate(
               "Tesfa Chiffon is a luxury Ethiopian fashion brand dedicated to creating elegant traditional dresses, modern fashion collections, and premium chiffon textile experiences.",
@@ -192,30 +170,18 @@ text-gray-600
               "We believe fashion is more than clothing. It represents identity, confidence, creativity, and personal expression. Every creation reflects passion, artistry, and the timeless beauty of Ethiopian heritage.",
             )}
           </p>
-        </motion.div>
+        </Motion.div>
       </section>
 
       {/* FOUNDER SECTION */}
 
       <section
-        className="
-bg-[#FFF4F7]
-py-20
-"
+        className="bg-[#fff8fa] px-5 py-20 sm:px-8 sm:py-28"
       >
         <div
-          className="
-max-w-7xl
-mx-auto
-px-5
-sm:px-8
-grid
-md:grid-cols-2
-gap-14
-items-center
-"
+          className="mx-auto grid max-w-7xl items-center gap-12 rounded-[2rem] border border-[#f5e4e9] bg-white p-6 shadow-[0_24px_80px_-48px_rgba(80,30,50,0.35)] sm:p-10 md:grid-cols-2 md:gap-16 md:p-14"
         >
-          <motion.div
+          <Motion.div
             initial={{
               opacity: 0,
               x: -40,
@@ -230,23 +196,21 @@ items-center
             transition={{
               duration: 0.8,
             }}
-            className="flex justify-center"
+            className="relative mx-auto w-full max-w-lg"
           >
+            <div aria-hidden="true" className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-[#f7ccda] to-[#f5dfc6]" />
             <img
               src={ceoPhoto}
-              alt="Zubiyda Zeyinu Founder and CEO"
-              className="
-w-full
-max-w-md
-h-[520px]
-object-cover
-rounded-[40px]
-shadow-2xl
-"
+              alt="Tesfa Chiffon founder"
+              className="relative h-[420px] w-full rounded-[1.75rem] object-cover shadow-xl sm:h-[520px]"
             />
-          </motion.div>
+            <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/30 bg-white/90 p-4 shadow-lg backdrop-blur sm:bottom-7 sm:left-7 sm:right-7 sm:p-5">
+              <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#c52d62]">Tesfa Chiffon</p>
+              <p className="mt-1 text-sm text-gray-600">{translate("Ethiopian heritage, thoughtfully reimagined.")}</p>
+            </div>
+          </Motion.div>
 
-          <motion.div
+          <Motion.div
             initial={{
               opacity: 0,
               x: 40,
@@ -263,103 +227,58 @@ shadow-2xl
             }}
           >
             <p
-              className="
-uppercase
-tracking-widest
-text-sm
-text-[#E91E63]
-font-semibold
-"
+              className="inline-flex rounded-full bg-[#fff0f4] px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[#c52d62]"
             >
               {translate("Founder & CEO")}
             </p>
 
             <h2
-              className="
-mt-4
-text-4xl
-md:text-5xl
-font-bold
-"
+              className="mt-5 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
             >
-              Zubeyda Zeyinu
+              {translate("Tesfa")}
             </h2>
 
             <p
-              className="
-mt-6
-text-gray-600
-text-lg
-leading-relaxed
-"
+              className="mt-6 text-base leading-8 text-gray-600 sm:text-lg"
             >
               {translate(
-                "Zubeyda Zeyinu is the founder and CEO of Tesfa Chiffon, a visionary fashion entrepreneur passionate about celebrating beauty, culture, and creativity through clothing.",
+                "Tesfa Chiffon is led by a clear creative vision: bringing Ethiopian heritage and contemporary fashion together with confidence and care.",
               )}
             </p>
 
             <p
-              className="
-mt-5
-text-gray-600
-text-lg
-leading-relaxed
-"
+              className="mt-5 text-base leading-8 text-gray-600 sm:text-lg"
             >
               {translate(
-                "Through dedication and artistic leadership, she built Tesfa into a brand that represents elegance, confidence, and the beauty of Ethiopian fashion.",
+                "Every design celebrates individuality, thoughtful craftsmanship, and the beauty of dressing in a way that feels truly your own.",
               )}
             </p>
 
             <p
-              className="
-mt-5
-text-gray-600
-text-lg
-leading-relaxed
-"
+              className="mt-5 border-l-2 border-[#e8a5bb] pl-5 text-base font-medium leading-8 text-gray-700 sm:text-lg"
             >
               {translate(
-                "Her vision is to create fashion experiences where every customer feels unique, confident, and connected to their identity.",
+                "Tesfa's vision is to create fashion experiences where every customer feels confident, elegant, and connected to their identity.",
               )}
             </p>
-          </motion.div>
+          </Motion.div>
         </div>
       </section>
       {/* ================= MISSION & VISION ================= */}
 
       <section
-        className="
-max-w-7xl
-mx-auto
-px-5
-sm:px-8
-py-24
-"
+        className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28"
       >
         <div
-          className="
-grid
-md:grid-cols-2
-gap-8
-"
+          className="grid gap-6 md:grid-cols-2"
         >
           {/* MISSION */}
 
           <div
-            className="
-p-10
-rounded-3xl
-bg-black
-text-white
-"
+            className="rounded-[1.75rem] border border-[#f2e5e9] bg-gradient-to-br from-[#2d1d27] to-[#171217] p-8 text-white shadow-lg sm:p-10"
           >
             <FaAward
-              className="
-text-4xl
-text-pink-400
-mb-6
-"
+              className="mb-6 rounded-2xl bg-white/10 p-3 text-3xl text-pink-300"
             />
 
             <h3
@@ -387,18 +306,10 @@ leading-relaxed
           {/* VISION */}
 
           <div
-            className="
-p-10
-rounded-3xl
-bg-[#FFE8F0]
-"
+            className="rounded-[1.75rem] border border-[#f2dce4] bg-gradient-to-br from-[#fff0f5] to-[#fffaf5] p-8 shadow-sm sm:p-10"
           >
             <FaGem
-              className="
-text-4xl
-text-pink-600
-mb-6
-"
+              className="mb-6 rounded-2xl bg-white p-3 text-3xl text-[#c52d62] shadow-sm"
             />
 
             <h3
@@ -428,10 +339,7 @@ leading-relaxed
       {/* ================= VALUES ================= */}
 
       <section
-        className="
-bg-[#FFF8FA]
-py-24
-"
+        className="bg-[#fff9fb] py-20 sm:py-28"
       >
         <div
           className="
@@ -448,18 +356,12 @@ mb-16
 "
           >
             <h2
-              className="
-text-4xl
-md:text-5xl
-font-bold
-"
+              className="text-4xl font-bold tracking-tight sm:text-5xl"
             >
               {translate("What Makes")}
 
               <span
-                className="
-text-[#E91E63]
-"
+                className="text-[#c52d62]"
               >
                 {" "}
                 {translate("Tesfa Different")}
@@ -476,26 +378,15 @@ gap-7
 "
           >
             {values.map((item, index) => (
-              <motion.div
+              <Motion.div
                 key={index}
                 whileHover={{
                   y: -10,
                 }}
-                className="
-bg-white
-rounded-3xl
-p-8
-shadow-lg
-border
-border-gray-100
-"
+                className="h-full rounded-[1.5rem] border border-[#f1e7ea] bg-white p-7 shadow-sm transition-shadow hover:shadow-xl sm:p-8"
               >
                 <item.icon
-                  className="
-text-4xl
-text-[#E91E63]
-mb-6
-"
+                  className="mb-6 rounded-2xl bg-[#fff0f4] p-3 text-3xl text-[#c52d62]"
                 />
 
                 <h3
@@ -516,7 +407,7 @@ leading-relaxed
                 >
                   {item.desc}
                 </p>
-              </motion.div>
+              </Motion.div>
             ))}
           </div>
         </div>
@@ -525,37 +416,18 @@ leading-relaxed
       {/* ================= SERVICES ================= */}
 
       <section
-        className="
-py-24
-max-w-7xl
-mx-auto
-px-5
-sm:px-8
-"
+        className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28"
       >
         <div
-          className="
-grid
-md:grid-cols-3
-gap-8
-"
+          className="grid gap-5 md:grid-cols-3"
         >
           {services.map((item, index) => (
             <div
               key={index}
-              className="
-p-8
-rounded-3xl
-border
-shadow-sm
-"
+              className="rounded-[1.5rem] border border-[#f1e7ea] bg-white p-7 shadow-sm transition-shadow hover:shadow-xl sm:p-8"
             >
               <item.icon
-                className="
-text-4xl
-text-[#E91E63]
-mb-5
-"
+                className="mb-5 rounded-2xl bg-[#fff0f4] p-3 text-3xl text-[#c52d62]"
               />
 
               <h3
@@ -584,15 +456,7 @@ leading-relaxed
       {/* ================= FINAL CTA ================= */}
 
       <section
-        className="
-py-24
-bg-gradient-to-r
-from-[#E91E63]
-to-[#F59E0B]
-text-white
-text-center
-px-5
-"
+        className="bg-[#211820] px-5 py-20 text-center text-white sm:py-28"
       >
         <h2
           className="
@@ -604,9 +468,7 @@ font-bold
           {translate("Experience The Beauty")}
 
           <span
-            className="
-block
-"
+            className="block font-serif font-medium italic text-[#f4b6ca]"
           >
             {translate("Of Tesfa Chiffon")}
           </span>
@@ -627,18 +489,7 @@ text-lg
 
         <a
           href="/gallery"
-          className="
-inline-block
-mt-10
-bg-white
-text-[#E91E63]
-px-10
-py-4
-rounded-full
-font-bold
-hover:scale-105
-transition
-"
+          className="mt-10 inline-block rounded-full bg-white px-10 py-4 font-bold text-[#c52d62] transition hover:scale-105"
         >
           {translate("Explore Collection")}
         </a>

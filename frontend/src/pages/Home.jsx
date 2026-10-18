@@ -97,7 +97,7 @@ const Home = () => {
           Luxury chiffon fashion,
           traditional clothing,
           custom designs,
-          and premium textile collections.
+          and custom-made fashion.
           "
         />
 
@@ -131,13 +131,12 @@ const Home = () => {
           "founder":
           {
             "@type":"Person",
-            "name":"Zubiyda Hussen",
-            "jobTitle":"Fashion Designer"
+            "name":"Tesfa Chiffon"
           },
 
 
           "telephone":
-          "+251912441059",
+          "+251993629172",
 
 
           "address":
@@ -145,7 +144,7 @@ const Home = () => {
             "@type":"PostalAddress",
 
             "streetAddress":
-            "Merkato Arogaw Military Tera F143",
+            "22 Dria Mall, 1st Floor, Shop No. 101",
 
             "addressLocality":
             "Addis Ababa",

@@ -4,11 +4,11 @@ import { FaPalette } from "react-icons/fa";
 const ModernGallery = () => {
   return (
     <FashionGalleryLayout
-      title="Modern"
-      highlight="Elegance"
-      badge="Modern Collection"
+      title="Custom"
+      highlight="Design"
+      badge="Custom Fashion"
       icon={<FaPalette />}
-      category="Modern"
+      category="Custom"
     />
   );
 };

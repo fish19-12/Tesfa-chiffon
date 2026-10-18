@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useCallback } from "react";
 
@@ -9,10 +9,8 @@ import am from "../translations/am.json";
 
 import {
   FaGem,
-  FaTshirt,
   FaPalette,
   FaCrown,
-  FaLeaf,
   FaHeart,
   FaArrowRight,
   FaStar,
@@ -22,11 +20,12 @@ import {
 /* ================= IMAGES ================= */
 
 import chiffonImg from "../assets/chiffon.jpg";
-import bridalImg from "../assets/bridal.jpg";
 import customImg from "../assets/custom.jpg";
-import traditionalImg from "../assets/traditional.jpg";
-import textileImg from "../assets/textile.jpg";
-import stylingImg from "../assets/styling.jpg";
+
+const translations = {
+  EN: en,
+  AM: am,
+};
 
 /* =====================================================
  TESFA PREMIUM SERVICES DATA
@@ -56,50 +55,6 @@ const services = [
   },
 
   {
-    title: "Bridal Luxury Collection",
-
-    subtitle: "Your Dream Wedding Look",
-
-    description:
-      "Beautiful bridal creations designed with luxury details, perfect finishing, and unforgettable elegance.",
-
-    image: bridalImg,
-
-    icon: <FaCrown />,
-
-    badge: "Bridal",
-
-    features: [
-      "Wedding Style",
-      "Custom Design",
-      "Luxury Details",
-      "Perfect Fit",
-    ],
-  },
-
-  {
-    title: "Ethiopian Heritage Wear",
-
-    subtitle: "Tradition Meets Modern Luxury",
-
-    description:
-      "Modern Ethiopian fashion inspired by culture, craftsmanship, and premium artistic details.",
-
-    image: traditionalImg,
-
-    icon: <FaTshirt />,
-
-    badge: "Heritage",
-
-    features: [
-      "Habesha Style",
-      "Premium Embroidery",
-      "Event Wear",
-      "Modern Touch",
-    ],
-  },
-
-  {
     title: "Custom Fashion Design",
 
     subtitle: "Created Only For You",
@@ -121,37 +76,10 @@ const services = [
     ],
   },
 
-  {
-    title: "Premium Textile Collection",
-
-    subtitle: "Luxury Materials Selection",
-
-    description:
-      "High-quality chiffon and fashion textiles selected for designers and fashion lovers.",
-
-    image: textileImg,
-
-    icon: <FaLeaf />,
-
-    badge: "Premium",
-
-    features: [
-      "Designer Fabric",
-      "Quality Material",
-      "Bulk Supply",
-      "Luxury Choice",
-    ],
-  },
 ];
 
 const Services = () => {
   const { language } = useLanguage();
-
-  const translations = {
-    EN: en,
-
-    AM: am,
-  };
 
   const translate = useCallback(
     (text) => {
@@ -194,7 +122,7 @@ rounded-full
 "
         />
 
-        <motion.div
+        <Motion.div
           initial={{
             opacity: 0,
             y: 20,
@@ -264,10 +192,10 @@ leading-relaxed
 "
           >
             {translate(
-              "Discover elegant chiffon, bridal beauty, traditional designs and custom creations.",
+              "Discover our chiffon collection and custom designs, created with elegance and care.",
             )}
           </p>
-        </motion.div>
+        </Motion.div>
       </section>
       {/* ================= SERVICES GRID ================= */}
 
@@ -324,7 +252,7 @@ gap-6
 "
         >
           {services.map((service, index) => (
-            <motion.article
+            <Motion.article
               key={index}
               initial={{
                 opacity: 0,
@@ -546,7 +474,7 @@ transition-all
                   <FaArrowRight />
                 </Link>
               </div>
-            </motion.article>
+            </Motion.article>
           ))}
         </div>
       </section>
@@ -581,7 +509,7 @@ max-w-6xl
 mx-auto
 "
         >
-          <motion.div
+          <Motion.div
             initial={{
               opacity: 0,
               y: 30,
@@ -644,7 +572,7 @@ leading-relaxed
                 "Every creation combines premium fabrics, creative design, and careful craftsmanship to make your style unforgettable.",
               )}
             </p>
-          </motion.div>
+          </Motion.div>
 
           <div
             className="
@@ -679,7 +607,7 @@ mt-10
                 text: "Professional finishing with attention to every detail.",
               },
             ].map((item, index) => (
-              <motion.div
+              <Motion.div
                 key={index}
                 whileHover={{
                   y: -8,
@@ -734,7 +662,7 @@ leading-relaxed
                 >
                   {translate(item.text)}
                 </p>
-              </motion.div>
+              </Motion.div>
             ))}
           </div>
         </div>
@@ -781,7 +709,7 @@ rounded-full
 "
         />
 
-        <motion.div
+        <Motion.div
           initial={{
             opacity: 0,
             y: 30,
@@ -848,7 +776,7 @@ leading-relaxed
 "
           >
             {translate(
-              "Choose luxury chiffon, bridal elegance, traditional beauty or a custom design created especially for you.",
+              "Choose a chiffon design or create a custom look made especially for you.",
             )}
           </p>
 
@@ -898,7 +826,7 @@ transition
               {translate("Explore Gallery")}
             </Link>
           </div>
-        </motion.div>
+        </Motion.div>
       </section>
     </div>
   );

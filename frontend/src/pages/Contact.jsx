@@ -4,11 +4,9 @@ import {
   FaMapMarkerAlt,
   FaClock,
   FaInstagram,
-  FaArrowRight,
 } from "react-icons/fa";
 
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { motion as Motion } from "framer-motion";
 import { useCallback } from "react";
 
 import { useLanguage } from "../context/LanguageContext.jsx";
@@ -16,13 +14,13 @@ import { useLanguage } from "../context/LanguageContext.jsx";
 import en from "../translations/en.json";
 import am from "../translations/am.json";
 
+const translations = {
+  EN: en,
+  AM: am,
+};
+
 const Contact = () => {
   const { language } = useLanguage();
-
-  const translations = {
-    EN: en,
-    AM: am,
-  };
 
   const translate = useCallback(
     (text) => {
@@ -37,13 +35,7 @@ const Contact = () => {
 
       title: "Phone",
 
-      content: (
-        <>
-          0912441059
-          <br />
-          0917888899
-        </>
-      ),
+      content: "0993629172",
 
       bg: "bg-[#FFE6EE]",
 
@@ -77,33 +69,9 @@ const Contact = () => {
     {
       icon: <FaMapMarkerAlt />,
 
-      title: "Location 1",
+      title: "Studio Location",
 
-      content: (
-        <>
-          መርካቶ አሮጌው ሚሊታሪ ተራ
-          <br />
-          F143
-        </>
-      ),
-
-      bg: "bg-[#FFE6EE]",
-
-      color: "text-[#FF2D6F]",
-    },
-
-    {
-      icon: <FaMapMarkerAlt />,
-
-      title: "Location 2",
-
-      content: (
-        <>
-          ቶር ሃይሎች
-          <br />
-          Queen Supermarket
-        </>
-      ),
+      content: "22 Dria Mall, 1st Floor, Shop No. 101",
 
       bg: "bg-[#FFE6EE]",
 
@@ -125,38 +93,18 @@ const Contact = () => {
 
   return (
     <div
-      className="
-min-h-screen
-bg-[#FFF7FA]
-text-[#1A1A1A]
-overflow-hidden
-"
+      className="min-h-screen overflow-hidden bg-[#fff9fb] text-[#1A1A1A]"
     >
       {/* ================= HERO ================= */}
 
       <section
-        className="
-relative
-pt-28
-pb-20
-px-5
-"
+        className="relative px-5 pb-14 pt-20 sm:pb-16 sm:pt-24"
       >
         <div
-          className="
-absolute
-top-0
-left-1/2
--translate-x-1/2
-w-[320px]
-h-[320px]
-bg-[#FF2D6F]/10
-blur-[120px]
-rounded-full
-"
+          className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-[#f8cbd9]/45 blur-3xl"
         />
 
-        <motion.div
+        <Motion.div
           initial={{
             opacity: 0,
             y: 40,
@@ -168,81 +116,43 @@ rounded-full
           transition={{
             duration: 0.8,
           }}
-          className="
-relative
-max-w-5xl
-mx-auto
-text-center
-"
+          className="relative mx-auto max-w-4xl text-center"
         >
           <p
-            className="
-uppercase
-tracking-[0.5em]
-text-xs
-font-bold
-text-[#FF2D6F]
-"
+            className="text-xs font-bold uppercase tracking-[0.3em] text-[#c52d62]"
           >
             {translate("Tesfa Chiffon")}
           </p>
 
           <h1
-            className="
-mt-5
-text-4xl
-sm:text-5xl
-md:text-7xl
-font-serif
-font-bold
-leading-tight
-"
+            className="mt-5 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
           >
             {translate("Contact Our")}
 
             <span
-              className="
-block
-text-[#FF2D6F]
-"
+              className="mt-1 block font-serif font-medium italic text-[#c52d62]"
             >
               {translate("Fashion Studio")}
             </span>
           </h1>
 
           <p
-            className="
-mt-6
-max-w-3xl
-mx-auto
-text-sm
-md:text-lg
-text-[#6B7280]
-leading-relaxed
-"
+            className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-[#6B7280] sm:text-base"
           >
             {translate(
-              "Connect with Tesfa Chiffon for luxury chiffon clothing, traditional fashion, custom-made designs, and premium textile materials created with elegance.",
+              "Get in touch with Tesfa Chiffon about custom designs, collections, and appointments.",
             )}
           </p>
-        </motion.div>
+        </Motion.div>
       </section>
       {/* ================= CONTACT CONTENT ================= */}
 
       <section
-        className="
-max-w-7xl
-mx-auto
-px-5
-pb-24
-grid
-lg:grid-cols-2
-gap-8
-"
+        className="mx-auto grid max-w-7xl gap-6 px-5 pb-20 sm:px-8 lg:grid-cols-[0.95fr_1.05fr]"
       >
         {/* INFORMATION CARD */}
 
-        <motion.div
+        <Motion.div
           initial={{
             opacity: 0,
             x: -40,
@@ -257,40 +167,19 @@ gap-8
           transition={{
             duration: 0.8,
           }}
-          className="
-bg-white
-rounded-[35px]
-p-6
-sm:p-10
-border
-border-[#F1DCE3]
-shadow-xl
-"
+          className="rounded-[1.75rem] border border-[#f0e3e8] bg-white p-6 shadow-[0_24px_80px_-48px_rgba(80,30,50,0.4)] sm:p-9"
         >
           <div
-            className="
-mb-10
-"
+            className="mb-7"
           >
             <h2
-              className="
-text-3xl
-md:text-4xl
-font-serif
-font-bold
-"
+              className="text-2xl font-bold tracking-tight sm:text-3xl"
             >
               {translate("Get In Touch")}
             </h2>
 
             <p
-              className="
-mt-3
-text-sm
-md:text-base
-text-[#6B7280]
-leading-relaxed
-"
+              className="mt-2 text-sm leading-6 text-[#6B7280] sm:text-base"
             >
               {translate(
                 "We would love to help you create your perfect fashion design.",
@@ -299,32 +188,20 @@ leading-relaxed
           </div>
 
           <div
-            className="
-space-y-5
-"
+            className="grid gap-3 sm:grid-cols-2"
           >
             {contactItems.map((item, index) => (
-              <motion.div
+              <Motion.div
                 key={index}
                 whileHover={{
                   x: 8,
                 }}
-                className="
-flex
-items-center
-gap-4
-p-4
-rounded-2xl
-border
-border-[#F1DCE3]
-bg-white
-transition
-"
+                className="flex items-center gap-4 rounded-2xl border border-[#f1e8ec] bg-white p-4 transition hover:border-[#e7b6c6] hover:bg-[#fffafd]"
               >
                 <div
                   className={`
-w-14
-h-14
+h-12
+w-12
 shrink-0
 rounded-2xl
 flex
@@ -340,60 +217,31 @@ ${item.color}
 
                 <div>
                   <p
-                    className="
-text-xs
-uppercase
-tracking-wide
-text-[#6B7280]
-font-semibold
-"
+                    className="text-xs font-semibold uppercase tracking-wide text-[#6B7280]"
                   >
                     {translate(item.title)}
                   </p>
 
                   <p
-                    className="
-mt-1
-font-semibold
-text-sm
-sm:text-base
-"
+                    className="mt-1 text-sm font-semibold leading-5 sm:text-base"
                   >
                     {typeof item.content === "string"
                       ? translate(item.content)
                       : item.content}
                   </p>
                 </div>
-              </motion.div>
+              </Motion.div>
             ))}
           </div>
 
           {/* ACTION BUTTONS */}
 
           <div
-            className="
-mt-10
-grid
-sm:grid-cols-2
-gap-4
-"
+            className="mt-7 grid gap-3 sm:grid-cols-2"
           >
             <a
-              href="tel:+251912441059"
-              className="
-flex
-items-center
-justify-center
-gap-3
-py-4
-rounded-full
-bg-[#FF2D6F]
-text-white
-font-bold
-shadow-lg
-hover:scale-105
-transition
-"
+              href="tel:0993629172"
+              className="flex items-center justify-center gap-3 rounded-full bg-[#c52d62] py-3.5 font-semibold text-white transition hover:bg-[#a92353]"
             >
               <FaPhone />
 
@@ -401,34 +249,21 @@ transition
             </a>
 
             <a
-              href="https://wa.me/251912441059"
+              href="https://wa.me/251993629172"
               target="_blank"
               rel="noopener noreferrer"
-              className="
-flex
-items-center
-justify-center
-gap-3
-py-4
-rounded-full
-bg-green-500
-text-white
-font-bold
-shadow-lg
-hover:scale-105
-transition
-"
+              className="flex items-center justify-center gap-3 rounded-full bg-[#238a59] py-3.5 font-semibold text-white transition hover:bg-[#1b7048]"
             >
               <FaWhatsapp />
 
               {translate("WhatsApp")}
             </a>
           </div>
-        </motion.div>
+        </Motion.div>
 
         {/* ================= MAP ================= */}
 
-        <motion.div
+        <Motion.div
           initial={{
             opacity: 0,
             x: 40,
@@ -443,182 +278,18 @@ transition
           transition={{
             duration: 0.8,
           }}
-          className="
-min-h-[450px]
-lg:min-h-[650px]
-rounded-[35px]
-overflow-hidden
-border
-border-[#F1DCE3]
-shadow-xl
-"
+          className="min-h-[420px] overflow-hidden rounded-[1.75rem] border border-[#f0e3e8] bg-white shadow-[0_24px_80px_-48px_rgba(80,30,50,0.4)] lg:min-h-[540px]"
         >
           <iframe
             title="Tesfa Location"
-            className="
-w-full
-h-full
-min-h-[450px]
-lg:min-h-[650px]
-"
+            className="h-full min-h-[420px] w-full lg:min-h-[540px]"
             src="
-https://maps.google.com/maps?q=Merkato%20Addis%20Ababa&t=&z=15&ie=UTF8&iwloc=&output=embed
+https://maps.google.com/maps?q=22%20Dria%20Mall%2C%20Addis%20Ababa&t=&z=16&ie=UTF8&iwloc=&output=embed
 "
             loading="lazy"
           />
-        </motion.div>
+        </Motion.div>
       </section>
-      {/* ================= PREMIUM CTA ================= */}
-
-      <section
-        className="
-relative
-overflow-hidden
-py-20
-md:py-28
-px-5
-bg-gradient-to-br
-from-[#FF2D6F]
-via-[#FF6394]
-to-[#F59E0B]
-text-white
-"
-      >
-        {/* BACKGROUND LIGHT EFFECTS */}
-
-        <div
-          className="
-absolute
-top-0
-right-0
-w-80
-h-80
-bg-white/20
-rounded-full
-blur-3xl
-"
-        />
-
-        <div
-          className="
-absolute
-bottom-0
-left-0
-w-80
-h-80
-bg-white/20
-rounded-full
-blur-3xl
-"
-        />
-
-        <motion.div
-          initial={{
-            opacity: 0,
-
-            y: 40,
-          }}
-          whileInView={{
-            opacity: 1,
-
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.8,
-          }}
-          className="
-relative
-max-w-4xl
-mx-auto
-text-center
-"
-        >
-          <p
-            className="
-uppercase
-tracking-[0.5em]
-text-xs
-font-bold
-text-white/80
-"
-          >
-            {translate("TESFA CHIFFON")}
-          </p>
-
-          <h2
-            className="
-mt-5
-text-4xl
-sm:text-5xl
-md:text-6xl
-font-serif
-font-bold
-leading-tight
-"
-          >
-            {translate("Create Your")}
-
-            <span
-              className="
-block
-"
-            >
-              {translate("Dream Fashion")}
-            </span>
-          </h2>
-
-          <p
-            className="
-mt-6
-max-w-2xl
-mx-auto
-text-sm
-md:text-lg
-text-white/90
-leading-relaxed
-"
-          >
-            {translate(
-              "Visit Tesfa Chiffon and work with our designer to create elegant traditional and modern clothing specially designed for you.",
-            )}
-          </p>
-
-          <Link
-            to="/gallery"
-            className="
-inline-flex
-items-center
-gap-3
-mt-10
-px-10
-py-4
-rounded-full
-bg-white
-text-[#FF2D6F]
-font-bold
-shadow-xl
-hover:scale-105
-transition
-"
-          >
-            {translate("Explore Collection")}
-
-            <FaArrowRight />
-          </Link>
-        </motion.div>
-      </section>
-
-      {/* MOBILE SPACE */}
-
-      <div
-        className="
-h-24
-md:hidden
-"
-      />
     </div>
   );
 };
